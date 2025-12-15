@@ -1,0 +1,126 @@
+/* ===================================
+   THEME SWITCHER
+   =================================== */
+
+.theme-toggle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle i {
+    font-size: 1.25rem;
+    transition: all var(--transition-base);
+}
+
+.sun-icon {
+    color: #ffd700;
+    position: absolute;
+}
+
+.moon-icon {
+    color: #4a5568;
+    position: absolute;
+}
+
+/* Light theme - show moon, hide sun */
+[data-theme="light"] .sun-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+}
+
+[data-theme="light"] .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Dark theme - show sun, hide moon */
+[data-theme="dark"] .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+[data-theme="dark"] .moon-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+}
+
+/* Floating theme toggle (alternative position) */
+.theme-toggle-floating {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    box-shadow: var(--shadow-xl);
+}
+
+.theme-toggle-floating:hover {
+    transform: scale(1.15) rotate(10deg);
+}
+
+/* Keyboard shortcut hint */
+.theme-toggle::after {
+    content: 'Ctrl+Shift+D';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--text-light);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+}
+
+.theme-toggle:hover::after {
+    opacity: 1;
+}
+
+/* Smooth theme transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Prevent transition on page load */
+.no-transition * {
+    transition: none !important;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle::after {
+        display: none;
+    }
+
+    .theme-toggle-floating {
+        width: 50px;
+        height: 50px;
+        bottom: 70px;
+    }
+}

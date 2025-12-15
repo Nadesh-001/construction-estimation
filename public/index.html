@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Arun Architecture & Constructions - Professional construction cost estimation, architectural design, and project management services">
+    <title>Arun Architecture & Constructions - Construction Cost Estimation</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme-switcher.css">
+    <link rel="stylesheet" href="css/user-profile.css">
+    <link rel="stylesheet" href="css/glassmorphism.css">
+    <link rel="stylesheet" href="css/calculators.css">
+    <link rel="stylesheet" href="css/detailed-calculator.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-content">
+            <div class="navbar-brand">
+                <img src="https://www.joonsquare.com/usermanage/image/business/arun-architecture-and-constructions-kanyakumari-44844/arun-architecture-and-constructions-kanyakumari-logo.png"
+                    alt="Arun Architecture & Constructions Logo" class="logo">
+                <div class="brand-text">
+                    <h1 class="company-name">Arun Architecture & Constructions</h1>
+                    <p class="tagline">YOURS DREAM COMES REAL</p>
+                </div>
+            </div>
+
+            <div class="navbar-actions">
+                <!-- Theme Switcher -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </button>
+
+                <!-- User Profile -->
+                <div class="user-profile">
+                    <button class="profile-button" id="profile-button" aria-label="User profile">
+                        <i class="fas fa-user"></i>
+                        <span class="login-indicator" id="login-indicator"></span>
+                    </button>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="profile-header" id="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="profile-info">
+                                <p class="profile-name" id="profile-name">Guest User</p>
+                                <p class="profile-email" id="profile-email">Not logged in</p>
+                            </div>
+                        </div>
+                        <div class="profile-menu">
+                            <a href="#" class="menu-item" data-requires-auth="true">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="#" class="menu-item" data-requires-auth="true">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Estimates</span>
+                            </a>
+                            <a href="#" class="menu-item" data-requires-auth="true">
+                                <i class="fas fa-history"></i>
+                                <span>History</span>
+                            </a>
+                            <a href="#" class="menu-item" data-requires-auth="true">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <div class="menu-divider"></div>
+                            <a href="#" class="menu-item" id="auth-action">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Login</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title">Building Your Dreams Into Reality</h2>
+            <p class="hero-subtitle">Professional Construction Cost Estimation & Architectural Services</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('calculators').scrollIntoView({behavior: 'smooth'})">
+                    Get Free Quote
+                </button>
+                <button class="btn btn-secondary"
+                    onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties" id="specialties">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-star section-icon"></i>
+                <h2 class="section-title">Our Specialties</h2>
+                <p class="section-subtitle">Comprehensive construction solutions tailored to your needs</p>
+            </div>
+
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="specialty-title">Residential Construction</h3>
+                    <p class="specialty-description">Custom homes designed and built to perfection</p>
+                    <ul class="specialty-features">
+                        <li><i class="fas fa-check"></i> Custom Home Design</li>
+                        <li><i class="fas fa-check"></i> Renovation & Remodeling</li>
+                        <li><i class="fas fa-check"></i> Quality Craftsmanship</li>
+                    </ul>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="specialty-title">Commercial Projects</h3>
+                    <p class="specialty-description">Large-scale commercial construction excellence</p>
+                    <ul class="specialty-features">
+                        <li><i class="fas fa-check"></i> Office Buildings</li>
+                        <li><i class="fas fa-check"></i> Retail Spaces</li>
+                        <li><i class="fas fa-check"></i> Industrial Facilities</li>
+                    </ul>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="specialty-title">Architectural Design</h3>
+                    <p class="specialty-description">Innovative designs that inspire and function</p>
+                    <ul class="specialty-features">
+                        <li><i class="fas fa-check"></i> 3D Visualization</li>
+                        <li><i class="fas fa-check"></i> Sustainable Design</li>
+                        <li><i class="fas fa-check"></i> Modern Aesthetics</li>
+                    </ul>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="specialty-title">Project Management</h3>
+                    <p class="specialty-description">End-to-end project coordination and execution</p>
+                    <ul class="specialty-features">
+                        <li><i class="fas fa-check"></i> Timeline Management</li>
+                        <li><i class="fas fa-check"></i> Budget Control</li>
+                        <li><i class="fas fa-check"></i> Quality Assurance</li>
+                    </ul>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="specialty-title">Cost Estimation</h3>
+                    <p class="specialty-description">Accurate and detailed project cost analysis</p>
+                    <ul class="specialty-features">
+                        <li><i class="fas fa-check"></i> Material Costing</li>
+                        <li><i class="fas fa-check"></i> Labor Estimation</li>
+                        <li><i class="fas fa-check"></i> Detailed Reports</li>
+                    </ul>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="specialty-title">Interior Design</h3>
+                    <p class="specialty-description">Beautiful interiors that reflect your style</p>
+                    <ul class="specialty-features">
+                        <li><i class="fas fa-check"></i> Space Planning</li>
+                        <li><i class="fas fa-check"></i> Custom Furniture</li>
+                        <li><i class="fas fa-check"></i> Lighting Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section class="calculators" id="calculators">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-calculator section-icon"></i>
+                <h2 class="section-title">Cost Calculators</h2>
+                <p class="section-subtitle">Instant cost estimates for your construction project</p>
+            </div>
+
+            <div class="calculators-grid">
+                <!-- Construction Cost Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Construction Cost Calculator</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label for="location-state">State</label>
+                            <select id="location-state" class="form-control">
+                                <option value="">Select State</option>
+                                <option value="tamil-nadu">Tamil Nadu</option>
+                                <option value="kerala">Kerala</option>
+                                <option value="karnataka">Karnataka</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location-city">City</label>
+                            <select id="location-city" class="form-control">
+                                <option value="">Select City</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <input type="text" id="pincode" class="form-control" placeholder="Enter pincode"
+                                maxlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="construction-area">Area (sq.ft)</label>
+                            <input type="number" id="construction-area" class="form-control" placeholder="Enter area">
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="calculateConstructionCost()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <div class="calculator-result" id="construction-result"></div>
+                    </div>
+                </div>
+
+                <!-- Concrete for Slabs Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Concrete for Slabs</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label for="slab-length">Length</label>
+                            <input type="number" id="slab-length" class="form-control" placeholder="Enter length">
+                        </div>
+                        <div class="form-group">
+                            <label for="slab-breadth">Breadth</label>
+                            <input type="number" id="slab-breadth" class="form-control" placeholder="Enter breadth">
+                        </div>
+                        <div class="form-group">
+                            <label for="slab-depth">Depth</label>
+                            <input type="number" id="slab-depth" class="form-control" placeholder="Enter depth">
+                        </div>
+                        <div class="form-group">
+                            <label for="slab-unit">Unit</label>
+                            <select id="slab-unit" class="form-control">
+                                <option value="meter">Meter</option>
+                                <option value="feet">Feet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="concrete-grade">Grade</label>
+                            <select id="concrete-grade" class="form-control">
+                                <option value="M10">M10</option>
+                                <option value="M15">M15</option>
+                                <option value="M20">M20</option>
+                                <option value="M25">M25</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="calculateConcrete()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <div class="calculator-result" id="concrete-result"></div>
+                    </div>
+                </div>
+
+                <!-- Raw Material Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-boxes"></i>
+                        <h3>Raw Material Calculator</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label for="raw-area">Area</label>
+                            <input type="number" id="raw-area" class="form-control" placeholder="Enter area">
+                        </div>
+                        <div class="form-group">
+                            <label for="raw-unit">Unit</label>
+                            <select id="raw-unit" class="form-control">
+                                <option value="sqft">Sq.ft</option>
+                                <option value="sqyd">Sq.yd</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="calculateRawMaterial()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <div class="calculator-result" id="raw-result"></div>
+                    </div>
+                </div>
+
+                <!-- Paints Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-paint-roller"></i>
+                        <h3>Paints Calculator</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label for="wall-height">Wall Height (ft)</label>
+                            <input type="number" id="wall-height" class="form-control" placeholder="Enter height">
+                        </div>
+                        <div class="form-group">
+                            <label for="wall-width">Wall Width (ft)</label>
+                            <input type="number" id="wall-width" class="form-control" placeholder="Enter width">
+                        </div>
+                        <div class="form-group">
+                            <label for="door-count">Number of Doors</label>
+                            <input type="number" id="door-count" class="form-control" placeholder="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="door-dimensions">Door Size (H x W ft)</label>
+                            <input type="text" id="door-dimensions" class="form-control" placeholder="7 x 3"
+                                value="7 x 3">
+                        </div>
+                        <div class="form-group">
+                            <label for="window-count">Number of Windows</label>
+                            <input type="number" id="window-count" class="form-control" placeholder="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="window-dimensions">Window Size (H x W ft)</label>
+                            <input type="text" id="window-dimensions" class="form-control" placeholder="4 x 3"
+                                value="4 x 3">
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="calculatePaint()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <div class="calculator-result" id="paint-result"></div>
+                    </div>
+                </div>
+
+                <!-- Ready Mix Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-truck-loading"></i>
+                        <h3>Ready Mix Calculator</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label for="rmc-height">Height (m)</label>
+                            <input type="number" id="rmc-height" class="form-control" placeholder="Enter height">
+                        </div>
+                        <div class="form-group">
+                            <label for="rmc-width">Width (m)</label>
+                            <input type="number" id="rmc-width" class="form-control" placeholder="Enter width">
+                        </div>
+                        <div class="form-group">
+                            <label for="rmc-depth">Depth (m)</label>
+                            <input type="number" id="rmc-depth" class="form-control" placeholder="Enter depth">
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="calculateReadyMix()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <div class="calculator-result" id="rmc-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Calculator Section -->
+    <section class="detailed-calculator" id="detailed-calculator">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-file-invoice-dollar section-icon"></i>
+                <h2 class="section-title">Detailed Cost Breakdown</h2>
+                <p class="section-subtitle">Comprehensive project cost analysis with material and labor breakdown</p>
+            </div>
+
+            <div class="detailed-calc-container">
+                <div class="calc-inputs">
+                    <div class="form-group">
+                        <label for="quality-selector">Construction Quality</label>
+                        <select id="quality-selector" class="form-control">
+                            <option value="normal">Normal (₹1,200/sq.ft)</option>
+                            <option value="standard">Standard (₹1,500/sq.ft)</option>
+                            <option value="high-end">High-End (₹2,000/sq.ft)</option>
+                            <option value="luxury">Luxury (₹2,500/sq.ft)</option>
+                        </select>
+                    </div>
+
+                    <div class="plot-inputs">
+                        <div class="form-group">
+                            <label for="plot-width">Plot Width (ft)</label>
+                            <input type="number" id="plot-width" class="form-control" placeholder="Enter width">
+                        </div>
+                        <div class="form-group">
+                            <label for="plot-length">Plot Length (ft)</label>
+                            <input type="number" id="plot-length" class="form-control" placeholder="Enter length">
+                        </div>
+                        <div class="form-group">
+                            <label for="plot-floors">Number of Floors</label>
+                            <input type="number" id="plot-floors" class="form-control" placeholder="Enter floors"
+                                value="1">
+                        </div>
+                    </div>
+
+                    <div class="calc-actions">
+                        <button class="btn btn-secondary" onclick="calculateTotalArea()">
+                            <i class="fas fa-ruler-combined"></i> Total Construction in Sq.Ft
+                        </button>
+                        <button class="btn btn-secondary" onclick="calculateTotalCost()">
+                            <i class="fas fa-rupee-sign"></i> Total Construction Cost
+                        </button>
+                    </div>
+
+                    <div class="cost-breakdown">
+                        <h3>Material Costs</h3>
+                        <div class="cost-grid">
+                            <div class="cost-item">
+                                <label for="cost-steel">Steel (kg)</label>
+                                <input type="number" id="cost-steel" class="form-control" placeholder="Quantity">
+                                <span class="cost-value" id="value-steel">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-cement">Cement (bags)</label>
+                                <input type="number" id="cost-cement" class="form-control" placeholder="Quantity">
+                                <span class="cost-value" id="value-cement">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-bricks">Bricks (nos)</label>
+                                <input type="number" id="cost-bricks" class="form-control" placeholder="Quantity">
+                                <span class="cost-value" id="value-bricks">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-stone">Stone (tons)</label>
+                                <input type="number" id="cost-stone" class="form-control" placeholder="Quantity">
+                                <span class="cost-value" id="value-stone">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-sand">Sand (tons)</label>
+                                <input type="number" id="cost-sand" class="form-control" placeholder="Quantity">
+                                <span class="cost-value" id="value-sand">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-water">Water (liters)</label>
+                                <input type="number" id="cost-water" class="form-control" placeholder="Quantity">
+                                <span class="cost-value" id="value-water">₹0</span>
+                            </div>
+                        </div>
+
+                        <h3>Labor & Other Costs</h3>
+                        <div class="cost-grid">
+                            <div class="cost-item">
+                                <label for="cost-excavation">Excavation</label>
+                                <input type="number" id="cost-excavation" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-excavation">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-labor">Labor</label>
+                                <input type="number" id="cost-labor" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-labor">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-design">Design Fee</label>
+                                <input type="number" id="cost-design" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-design">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-doors">Doors/Windows</label>
+                                <input type="number" id="cost-doors" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-doors">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-shuttering">Shuttering</label>
+                                <input type="number" id="cost-shuttering" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-shuttering">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-plumbing">Plumbing</label>
+                                <input type="number" id="cost-plumbing" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-plumbing">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-electrical">Electrical</label>
+                                <input type="number" id="cost-electrical" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-electrical">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-flooring">Flooring</label>
+                                <input type="number" id="cost-flooring" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-flooring">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-painting">Painting</label>
+                                <input type="number" id="cost-painting" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-painting">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-boundary">Boundary Wall</label>
+                                <input type="number" id="cost-boundary" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-boundary">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <label for="cost-other">Other</label>
+                                <input type="number" id="cost-other" class="form-control" placeholder="Amount">
+                                <span class="cost-value" id="value-other">₹0</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" onclick="calculateAllCosts()">
+                            <i class="fas fa-calculator"></i> Calculate All Costs
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calc-summary" id="calc-summary" style="display: none;">
+                    <h3><i class="fas fa-file-invoice"></i> Cost Summary</h3>
+                    <div class="summary-content" id="summary-content"></div>
+                    <button class="btn btn-success btn-block" onclick="exportToPDF()">
+                        <i class="fas fa-file-pdf"></i> Download PDF Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Contact Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-info-circle section-icon"></i>
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Get in touch with our team</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Arun Architecture & Constructions</h3>
+                    <p>We are a leading construction company specializing in residential and commercial projects. With
+                        years of experience and a commitment to excellence, we turn your dreams into reality.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/916374698498" target="_blank" class="contact-link">
+                            +91 6374698498
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <a href="mailto:arunarchitect4u@gmail.com" class="contact-link">
+                            arunarchitect4u@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Website</h4>
+                        <a href="https://arunarchiconstructions.com" target="_blank" class="contact-link">
+                            arunarchiconstructions.com
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Location</h4>
+                        <p class="address">8°08'02.9"N 77°27'17.6"E</p>
+                        <div class="location-actions">
+                            <a href="https://www.google.com/maps/place/8%C2%B008'02.9%22N+77%C2%B027'17.6%22E/@8.1341345,77.454895,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.1341345!4d77.454895?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="btn btn-sm btn-primary">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                            <button class="btn btn-sm btn-secondary" onclick="copyAddress()">
+                                <i class="fas fa-copy"></i> Copy Address
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Arun Architecture & Constructions</h4>
+                    <p>Building dreams into reality with excellence and precision.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#specialties">Specialties</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                        <li><a href="#about">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 6374698498</li>
+                        <li><i class="fas fa-envelope"></i> arunarchitect4u@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Arun Architecture & Constructions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-overlay" onclick="closeModal('login-modal')"></div>
+        <div class="modal-content glassmorphism">
+            <button class="modal-close" onclick="closeModal('login-modal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-control" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="login-password" class="form-control" required
+                            placeholder="Enter your password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('login-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember-me">
+                        <span>Remember me</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <p class="modal-footer-text">
+                    Don't have an account?
+                    <a href="#" onclick="switchModal('login-modal', 'signup-modal')">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-overlay" onclick="closeModal('signup-modal')"></div>
+        <div class="modal-content glassmorphism">
+            <button class="modal-close" onclick="closeModal('signup-modal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">
+                <i class="fas fa-user-plus"></i> Create Account
+            </h2>
+            <form id="signup-form" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" class="form-control" required
+                        placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-control" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-phone">Phone Number</label>
+                    <div class="phone-input">
+                        <span class="phone-prefix">+91</span>
+                        <input type="tel" id="signup-phone" class="form-control" required
+                            placeholder="Enter 10-digit number" maxlength="10" pattern="[0-9]{10}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signup-password" class="form-control" required
+                            placeholder="Create a password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('signup-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signup-confirm-password" class="form-control" required
+                            placeholder="Confirm your password">
+                        <button type="button" class="password-toggle"
+                            onclick="togglePassword('signup-confirm-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+                <p class="modal-footer-text">
+                    Already have an account?
+                    <a href="#" onclick="switchModal('signup-modal', 'login-modal')">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Toggle chatbot">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-content">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Assistant</span>
+                </div>
+                <button class="chatbot-close" onclick="toggleChatbot()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        Hello! I'm your construction assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-quick-replies" id="quick-replies">
+                <button class="quick-reply" onclick="sendQuickReply('What are your services?')">
+                    What are your services?
+                </button>
+                <button class="quick-reply" onclick="sendQuickReply('How to calculate costs?')">
+                    How to calculate costs?
+                </button>
+                <button class="quick-reply" onclick="sendQuickReply('Material prices')">
+                    Material prices
+                </button>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Type your message..."
+                    onkeypress="handleChatKeyPress(event)">
+                <button class="chatbot-send" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- jsPDF Library for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/detailed-calculator.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

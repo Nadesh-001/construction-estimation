@@ -1,0 +1,298 @@
+/* ===================================
+   DETAILED CALCULATOR
+   =================================== */
+
+.detailed-calculator {
+    padding: var(--spacing-xl) 0;
+    background: var(--bg-secondary);
+}
+
+.detailed-calc-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+/* Calculator Inputs */
+.calc-inputs {
+    background: var(--bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.plot-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.calc-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Cost Breakdown */
+.cost-breakdown h3 {
+    color: var(--primary-color);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cost-item {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.cost-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.cost-item label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+}
+
+.cost-item input {
+    margin-bottom: var(--spacing-xs);
+}
+
+.cost-value {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    padding: var(--spacing-xs);
+    background: var(--bg-primary);
+    border-radius: 6px;
+}
+
+/* Summary Section */
+.calc-summary {
+    background: var(--bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--primary-color);
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.calc-summary h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-2xl);
+}
+
+.summary-content {
+    margin-bottom: var(--spacing-lg);
+}
+
+.summary-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.summary-section h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-label {
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+}
+
+.summary-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+}
+
+/* Project Details */
+.project-details {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Grand Total */
+.grand-total {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.grand-total .label {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+}
+
+.grand-total .value {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Date Stamp */
+.date-stamp {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-md);
+}
+
+/* PDF Export Button */
+.calc-summary .btn-success {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md) var(--spacing-xl);
+}
+
+/* Quality Selector Badge */
+#quality-selector {
+    font-weight: 600;
+    background: var(--bg-secondary);
+}
+
+#quality-selector option {
+    padding: var(--spacing-sm);
+}
+
+/* Auto-calculated values highlight */
+.auto-calculated {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 107, 53, 0.1));
+    border-color: var(--primary-color);
+}
+
+.auto-calculated .cost-value {
+    animation: highlight 0.6s ease;
+}
+
+@keyframes highlight {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .detailed-calc-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cost-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .calc-inputs,
+    .calc-summary {
+        padding: var(--spacing-lg);
+    }
+
+    .plot-inputs,
+    .calc-actions,
+    .cost-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grand-total .value {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+/* Print Styles for PDF */
+@media print {
+
+    .calc-inputs,
+    .btn {
+        display: none;
+    }
+
+    .calc-summary {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .grand-total {
+        background: #ff8c00;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

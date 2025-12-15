@@ -1,0 +1,107 @@
+/* ===================================
+   ESTIMATES MODAL
+   =================================== */
+
+.estimate-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: all var(--transition-base);
+}
+
+.estimate-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.estimate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.estimate-header h4 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+}
+
+.estimate-date {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.estimate-details {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.estimate-detail {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.estimate-detail i {
+    color: var(--primary-color);
+}
+
+.estimate-cost {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--bg-primary);
+    border-radius: 8px;
+}
+
+.cost-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.cost-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.cost-per-sqft {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.estimate-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+}
+
+#estimates-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Empty state */
+#estimates-list:empty::after {
+    content: 'No estimates found';
+    display: block;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+}

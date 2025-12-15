@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: construction-estimation
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "cd server && gunicorn app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: FLASK_ENV
+        value: production
+
+databases:
+  - name: construction-db
+    databaseName: construction_estimation
+    user: construction_user
