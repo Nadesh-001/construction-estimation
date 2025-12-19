@@ -313,25 +313,135 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .chatbot {
+        bottom: 15px;
+        right: 15px;
+    }
+
     .chatbot-window {
-        width: calc(100vw - 40px);
-        max-width: 380px;
+        width: calc(100vw - 30px);
+        max-width: 400px;
         height: 500px;
+        bottom: 75px;
     }
 
     .chatbot-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 1.25rem;
+        width: 56px;
+        height: 56px;
+        font-size: 1.3rem;
+        /* Prevent shrinking */
+        flex-shrink: 0;
+    }
+
+    .chatbot-header span {
+        font-size: var(--font-size-base);
+    }
+
+    .message-content {
+        font-size: 0.9rem;
+    }
+
+    .quick-reply {
+        font-size: 0.85rem;
+        padding: 6px 12px;
     }
 }
 
 @media (max-width: 480px) {
+    .chatbot {
+        bottom: 10px;
+        right: 10px;
+    }
+
     .chatbot-window {
-        bottom: 70px;
-        right: -10px;
+        bottom: 65px;
+        right: 0;
+        left: 10px;
         width: calc(100vw - 20px);
-        height: 450px;
+        max-width: none;
+        height: calc(100vh - 150px);
+        max-height: 500px;
+    }
+
+    .chatbot-toggle {
+        width: 52px;
+        height: 52px;
+        font-size: 1.2rem;
+        /* Ensure button doesn't shrink */
+        min-width: 52px;
+        min-height: 52px;
+    }
+
+    .chatbot-header {
+        padding: 12px;
+    }
+
+    .chatbot-header i {
+        font-size: 1.3rem;
+    }
+
+    .chatbot-header span {
+        font-size: 0.95rem;
+    }
+
+    .chatbot-messages {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .message-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .message-content {
+        font-size: 0.875rem;
+        padding: 8px 12px;
+    }
+
+    .chatbot-quick-replies {
+        padding: 0 12px 8px;
+        gap: 6px;
+    }
+
+    .quick-reply {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .chatbot-input {
+        padding: 10px 12px;
+    }
+
+    .chatbot-input input {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .chatbot-send {
+        width: 40px;
+        height: 40px;
+        /* Prevent shrinking */
+        min-width: 40px;
+        min-height: 40px;
+        flex-shrink: 0;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .chatbot-toggle {
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    .chatbot-window {
+        height: calc(100vh - 120px);
+        max-height: 450px;
     }
 }
 
