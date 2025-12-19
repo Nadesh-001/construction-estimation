@@ -345,3 +345,8 @@ class APIService {
 
 // Create global API instance
 const api = new APIService();
+
+// Make API instance globally available
+if (typeof window !== 'undefined') {
+    window.api = api;
+}
